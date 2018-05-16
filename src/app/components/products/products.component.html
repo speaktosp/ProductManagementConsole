@@ -1,3 +1,5 @@
+
+<app-product-form></app-product-form> 
 <ul class="list-group" *ngIf="loaded && products.length > 0">
   <li *ngFor="let product of products" [class.list-group-item-secondary]="selectedProduct === product"
     class="list-group-item d-flex justify-content-between align-items-center"
@@ -8,7 +10,7 @@
           <ul class="list-group">
             <li class="list-group-item" *ngIf="product.sku">SKU: {{ product.sku }}</li>
             <li class="list-group-item" *ngIf="showExtended && product.brand">Brand: {{ product.brand }}</li>
-            <li class="list-group-item" *ngIf="showExtended && product.description">{{ product.description}}</li>
+            <li class="list-group-item" *ngIf="showExtended && product.description">{{ product.description.length > 80 ? product.description.substring(0,80) : product.description}}</li>
             <li class="list-group-item" *ngIf="showExtended && product.date">Last Modified on: {{ product.date | date: 'short'}}</li>
           </ul>
           <div class="row mt-4">

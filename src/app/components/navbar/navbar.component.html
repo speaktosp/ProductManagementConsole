@@ -1,5 +1,15 @@
-<nav class="navbar navbar-dark bg-dark mb-3">
+<nav class="navbar navbar-expand navbar-dark bg-primary mb-4">
   <div class="container">
-    <a href="/" class="navbar-brand">Product Management Console</a>
+    <a routerLink="/" class="navbar-brand">Product Management Console</a>
+    <div>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/about" class="nav-link">About Me</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

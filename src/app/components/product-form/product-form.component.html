@@ -71,11 +71,11 @@
           class="form-control"
           name="description"
           #productDescription="ngModel"
-          minlength="140"
+          minlength="50"
           maxlength="2000"
         >
         <div [hidden]="!productDescription.errors?.minlength" class="invalid-feedback">
-            Must be at least 140 characters
+            Must be at least 50 characters
         </div>
         <div [hidden]="!productDescription.errors?.maxlength" class="invalid-feedback">
             Can not exceed 2000 characters
