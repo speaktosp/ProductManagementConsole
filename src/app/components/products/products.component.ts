@@ -22,7 +22,7 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
     this.productService.stateClear.subscribe(clear => {
       if(clear) {
-        this.selectedProduct = {id: '', name: '', sku: -1, description: '', brand:'', image: '', date: '', isActive: false};
+        this.selectedProduct = {id: '', name: '', sku: undefined, description: '', brand:'', image: '', date: '', isActive: true};
       }
     });
 
@@ -44,7 +44,7 @@ export class ProductsComponent implements OnInit {
   }
 
   setCurrentClasses() {
-    this.currentClasses = { 
+    this.currentClasses = {
       'big-text': this.showExtended
     }
   }

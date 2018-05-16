@@ -5,16 +5,20 @@
     <div class="row mb-5">
       <div class="col-sm-8">
         <h3 [ngStyle]="currentStyles"> <a (click)="onSelect(product)" href="#">{{ product.name }}</a>  </h3>
-          <ul class="list-group" *ngIf="showExtended && product.sku && product.date">
-            <li class="list-group-item">SKU: {{ product.sku }}</li>
-            <li class="list-group-item">Date: {{ product.date | date: 'short'}}</li>
+          <ul class="list-group">
+            <li class="list-group-item" *ngIf="product.sku">SKU: {{ product.sku }}</li>
+            <li class="list-group-item" *ngIf="showExtended && product.brand">Brand: {{ product.brand }}</li>
+            <li class="list-group-item" *ngIf="showExtended && product.description">{{ product.description}}</li>
+            <li class="list-group-item" *ngIf="showExtended && product.date">Last Modified on: {{ product.date | date: 'short'}}</li>
           </ul>
-
-          <ul class="list-group" *ngIf="showExtended && product.brand && product.description">
-            <li class="list-group-item">Brand: {{ product.brand }}</li>
-            <li class="list-group-item">Description: {{ product.description}}</li>
-          </ul>
-          <button (click)="onDelete(product)" type="button" class="btn btn-danger pull-right mt-5" [hidden]=!product.isActive>Delete</button>
+          <div class="row mt-4">
+            <div class="col-sm-2">
+              <a (click)="onSelect(product)" class="btn btn-warning pull-right"  href="#">Edit</a>
+            </div>
+            <div class="col-sm-2">
+              <button (click)="onDelete(product)" type="button" class="btn btn-danger pull-right" [hidden]=!product.isActive>Delete</button>
+            </div>
+          </div>
       </div>
       <div class="col-sm-4 pull-right" >
         <img *ngIf="product.image" class="img-fluid" [src]="product.image" alt="">

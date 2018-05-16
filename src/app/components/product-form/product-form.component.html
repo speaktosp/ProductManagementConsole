@@ -1,9 +1,96 @@
 <div class="card card-body mb-3">
-  <form (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <input type="name" name="name" [(ngModel)]="name" class="form-control" placeholder="Add a product...">
-    </div>
-    <input type="submit" value="Add Product" class="btn btn-light mr-3" [disabled]="!this.name">
-    <button (click)="clearState()" type="button" class="btn btn-warning" [hidden]=!this.name>Clear</button>
+  <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+      <div class="form-group">
+        <label>Product Name</label>
+        <input
+          type="text"
+          [(ngModel)]="product.name"
+          [ngClass]="{'is-invalid':productName.errors && productName.touched}"
+          class="form-control"
+          name="name"
+          #productName="ngModel"
+          minlength="2"
+          maxlength="35"
+          required
+        >
+        <div [hidden]="!productName.errors?.required" class="invalid-feedback">
+          Product name required
+        </div>
+
+        <div [hidden]="!productName.errors?.minlength" class="invalid-feedback">
+            Must be at least 2 characters
+        </div>
+        <div [hidden]="!productName.errors?.maxlength" class="invalid-feedback">
+            Can not exceed 35 characters
+        </div>
+      </div>
+      <div class="form-group">
+        <label>SKU</label>
+        <input
+          type="number"
+          [(ngModel)]="product.sku"
+          [ngClass]="{'is-invalid':productSku.errors && productSku.touched}"
+          class="form-control"
+          name="sku"
+          #productSku="ngModel"
+          min="0" max="10000000"
+          required
+        >
+        <div [hidden]="!productSku.errors?.required" class="invalid-feedback">
+          SKU required
+        </div>
+        <div [hidden]="!productSku.errors?.pattern" class="invalid-feedback">
+            Not a valid number
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Brand Name</label>
+        <input
+          type="text"
+          [(ngModel)]="product.brand"
+          [ngClass]="{'is-invalid':productBrand.errors && productBrand.touched}"
+          class="form-control"
+          name="brand"
+          #productBrand="ngModel"
+          minlength="2"
+          maxlength="20"
+        >
+        <div [hidden]="!productBrand.errors?.minlength" class="invalid-feedback">
+            Must be at least 2 characters
+        </div>
+        <div [hidden]="!productBrand.errors?.maxlength" class="invalid-feedback">
+            Can not exceed 20 characters
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <input
+          type="textarea"
+          [(ngModel)]="product.description"
+          [ngClass]="{'is-invalid':productDescription.errors && productDescription.touched}"
+          class="form-control"
+          name="description"
+          #productDescription="ngModel"
+          minlength="140"
+          maxlength="2000"
+        >
+        <div [hidden]="!productDescription.errors?.minlength" class="invalid-feedback">
+            Must be at least 140 characters
+        </div>
+        <div [hidden]="!productDescription.errors?.maxlength" class="invalid-feedback">
+            Can not exceed 2000 characters
+        </div>
+      </div>
+      <div class="form-group">
+          <label>Activate</label> <BR/>
+          <label class="switch">
+          <input type="checkbox" name="isActive" [(ngModel)]="product.isActive" [checked]="product.isActive" (change)="product.isActive = !product.isActive">
+          <span class="slider round"></span>
+          </label>
+      </div>
+    <input [hidden]="!isNew" type="submit" value="Add Product" class="btn btn-light mr-3" [disabled]="!productForm.form.valid" >
+    <input [hidden]="isNew" type="submit" value="Edit Product" class="btn btn-light mr-3" [disabled]="!productForm.form.valid" >
+
+    <button (click)="clearState()" type="button" class="btn btn-warning" [hidden]=!productForm.form.valid>Clear</button>
   </form>
 </div>

@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductService } from './services/product.service';
+import { NotFoundComponent } from './component/not-found/not-found.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ProductService } from './services/product.service';
     AppComponent,
     NavbarComponent,
     ProductFormComponent,
-    ProductsComponent
+    ProductsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
