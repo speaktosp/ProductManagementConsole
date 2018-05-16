@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <a routerLink="/products" class="btn btn-light btn-sm mb-3">Back</a>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{product.name}}</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src={{product.image}}>
+            </div>
+            <div class="col-md-6">
+              <p>{{product.description}}</p>
+              <ul class="list-group">
+                <li class="list-group-item">SKU: {{product.sku}}</li>
+                <li class="list-group-item">Brand: {{product.brand}}</li>
+                <li class="list-group-item">Active: {{product.isActive}}</li>
+                <li class="list-group-item">Last Modified on: {{product.date}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pull-right">
+        <a href="edit/{{product.id}}">Edit</a> |  <a href="#" ng-click="remove/product.id">Delete</a>
+        </div>
+    </div>
+  </div>
+ </div>

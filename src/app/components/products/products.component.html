@@ -4,7 +4,7 @@
     [class.bg-light]="product.isActive" [style.border-color]="product.isActive ? 'green' : ''">
     <div class="row mb-5">
       <div class="col-sm-8">
-        <h3 [ngStyle]="currentStyles"> <a (click)="onSelect(product)" href="#">{{ product.name }}</a>  </h3>
+        <h3 [ngStyle]="currentStyles"> <a routerLink="/details/{{ product.id }}" href="#">{{ product.name }}</a>  </h3>
           <ul class="list-group">
             <li class="list-group-item" *ngIf="product.sku">SKU: {{ product.sku }}</li>
             <li class="list-group-item" *ngIf="showExtended && product.brand">Brand: {{ product.brand }}</li>
@@ -13,14 +13,14 @@
           </ul>
           <div class="row mt-4">
             <div class="col-sm-2">
-              <a (click)="onSelect(product)" class="btn btn-warning pull-right"  href="#">Edit</a>
+              <a routerLink="add" class="btn btn-warning pull-right"  href="#">Edit</a>
             </div>
             <div class="col-sm-2">
               <button (click)="onDelete(product)" type="button" class="btn btn-danger pull-right" [hidden]=!product.isActive>Delete</button>
             </div>
           </div>
       </div>
-      <div class="col-sm-4 pull-right" >
+      <div class="col-sm-4" >
         <img *ngIf="product.image" class="img-fluid" [src]="product.image" alt="">
       </div>
     </div>

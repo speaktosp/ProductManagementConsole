@@ -61,6 +61,19 @@ export class ProductService {
     localStorage.setItem('products', JSON.stringify(this.products));
   }
 
+  getProduct(id: number) :Product {
+    if(localStorage.getItem('products') === null) {
+      this.products = [];
+    } else {
+      this.products = JSON.parse(localStorage.getItem('products'));
+    }
+
+    let returnProduct = this.products.filter((prod) => {
+      return prod.id == id;
+    });
+    return returnProduct && returnProduct.length > 0? returnProduct[0]: {};
+  }
+
   deleteProduct(product: Product) {
     this.products.forEach((cur, index) => {
       if(product.id === cur.id) {

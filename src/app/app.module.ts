@@ -7,7 +7,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductService } from './services/product.service';
-import { NotFoundComponent } from './component/not-found/not-found.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { AboutComponent } from './components/about/about.component';
+import { DetailsComponent } from './components/details/details.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -16,11 +20,15 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
     NavbarComponent,
     ProductFormComponent,
     ProductsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AboutComponent,
+    DetailsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
