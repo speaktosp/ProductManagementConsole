@@ -1,0 +1,32 @@
+<ul class="list-group" *ngIf="loaded && products.length > 0">
+  <li *ngFor="let product of products" [class.list-group-item-secondary]="selectedProduct === product"
+    class="list-group-item d-flex justify-content-between align-items-center"
+    [class.bg-light]="product.isActive" [style.border-color]="product.isActive ? 'green' : ''">
+    <div class="row mb-5">
+      <div class="col-sm-8">
+        <h3 [ngStyle]="currentStyles"> <a (click)="onSelect(product)" href="#">{{ product.name }}</a>  </h3>
+          <ul class="list-group" *ngIf="showExtended && product.sku && product.date">
+            <li class="list-group-item">SKU: {{ product.sku }}</li>
+            <li class="list-group-item">Date: {{ product.date | date: 'short'}}</li>
+          </ul>
+
+          <ul class="list-group" *ngIf="showExtended && product.brand && product.description">
+            <li class="list-group-item">Brand: {{ product.brand }}</li>
+            <li class="list-group-item">Description: {{ product.description}}</li>
+          </ul>
+          <button (click)="onDelete(product)" type="button" class="btn btn-danger pull-right mt-5" [hidden]=!product.isActive>Delete</button>
+      </div>
+      <div class="col-sm-4 pull-right" >
+        <img *ngIf="product.image" class="img-fluid" [src]="product.image" alt="">
+      </div>
+    </div>
+  </li>
+</ul>
+
+<div *ngIf="loaded && products.length == 0">
+  <h5>There are no products in the system</h5>
+</div>
+
+<div *ngIf="!loaded">
+  <h5>Loading...</h5>
+</div>
