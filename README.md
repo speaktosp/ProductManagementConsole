@@ -33,8 +33,7 @@ A Product has the following attributes:
 <BR/>
 <b>Product Create/Edit Screen</b>
 
-<ul>
-<li>
+<ul> 
 <li>Contains a form for adding new products or updating existing products.</li>
 
 <li>Form has validation for required fields.</li>
@@ -59,7 +58,7 @@ A Product has the following attributes:
 </ul>
 </ul>
 <BR/>
-<b>Product Detail Screen</b>
+<b>Product Operations supported </b>
 
 Shows Product fields (read-only)
 <ul>
