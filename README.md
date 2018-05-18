@@ -30,6 +30,7 @@ A Product has the following attributes:
 <li>Image URL (optional)</li>
 </ul>
 
+<BR/>
 <b>Product Create/Edit Screen</b>
 
 <ul>
@@ -41,6 +42,7 @@ A Product has the following attributes:
 <li>Upon submit, navigates to the Product List Screen.</li>
 </ul>
 
+<BR/>
 
 <b>Product List Screen</b>
 
@@ -56,9 +58,10 @@ A Product has the following attributes:
   <li> Add New Product (links to Product Create/Edit Screen)</li>
 </ul>
 </ul>
-Product Detail Screen
+<BR/>
+<b>Product Detail Screen</b>
 
-<b>Shows Product fields (read-only)</b>
+Shows Product fields (read-only)
 <ul>
     <li>Supports the following navigation and actions:</li>
 
