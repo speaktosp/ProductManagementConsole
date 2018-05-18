@@ -60,8 +60,8 @@ A Product has the following attributes:
 <BR/>
 <b>Product Operations supported </b>
 
-Shows Product fields (read-only)
 <ul>
+    <li>Shows Product fields (read-only)</li>
     <li>Supports the following navigation and actions:</li>
 
   <ul>
@@ -72,3 +72,9 @@ Shows Product fields (read-only)
   <li>Edit this Product  </li>
   </ul>
 </ul>
+
+# How to build the application 
+
+<B>Run the following command</b>
+
+<i>ng serve </i>
