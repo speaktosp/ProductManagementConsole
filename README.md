@@ -1,71 +1,72 @@
 # ProductManagementConsole
 
 
-Task: Build a small product catalog web app.
+</h1>Build a small product catalog web app.</h1>
 
 
 It should have the following screens:
 
 
-Product Create/Edit
+<ul>
+<li>Product Create/Edit</li>
 
-Product List
+<li>Product List</li>
+ 
 
-Product Detail
-
-
-Requirements:
+<h3>Requirements:</h3>
 
 
 A Product has the following attributes:
 
+<ul>
+<li>Name (required)</li>
 
-Name (required)
+<li>SKU (alphanumeric, required)</li>
 
-SKU (alphanumeric, required)
+<li>Description (optional)</li>
 
-Description (optional)
+<li>Brand (optional)</li>
 
-Brand (optional)
+<li>Image URL (optional)</li>
+</ul>
 
-Image URL (optional)
+<b>Product Create/Edit Screen</b>
+
+<ul>
+<li>
+<li>Contains a form for adding new products or updating existing products.</li>
+
+<li>Form has validation for required fields.</li>
+
+<li>Upon submit, navigates to the Product List Screen.</li>
+</ul>
 
 
-Product Create/Edit Screen
-
-
-Contains a form for adding new products or updating existing products.
-
-Form has validation for required fields.
-
-Upon submit, navigates to the Product List Screen.
-
-
-Product List Screen
+<b>Product List Screen</b>
 
 <ul>
 <li> Lists known Product with columns Name/SKU/Description/Brand </li>
 
 <li> Description is truncated if longer than 40 characters</li>
 
-<ul>Supports the following navigation & actions:</ul>
+<li>Supports the following navigation & actions:</li>
+<ul>
+  <li> When selected by clicking, reveals a summary of the Product (including its image) in an adjacent pane to the right of the Product list</li>
 
-<li> When selected by clicking, reveals a summary of the Product (including its image) in an adjacent pane to the right of the Product list</li>
-
-<li> Add New Product (links to Product Create/Edit Screen)</li>
+  <li> Add New Product (links to Product Create/Edit Screen)</li>
 </ul>
 </ul>
 Product Detail Screen
 
+<b>Shows Product fields (read-only)</b>
+<ul>
+    <li>Supports the following navigation and actions:</li>
 
-Shows Product fields (read-only)
+  <ul>
+  <li>Link to Product List</li>
 
-If URL is present, displays the Product image.
+  <li>Delete this Product</li>
 
-Supports the following navigation and actions:
-
-Link to Product List
-
-Delete this Product
-
-Edit this Product (link to Create/Edit Screen)
+  <li>Edit this Product  </li>
+  </ul>
+</ul>
