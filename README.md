@@ -1,4 +1,4 @@
-# ProductManagementConsole
+# Product Management Console
 
 
 </h1>Build a small product catalog web app.</h1>
